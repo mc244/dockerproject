@@ -51,12 +51,214 @@
 </header>
 
 <div class="container">
-    <h1 class="mt-5 col-9">Basic Linux Commands and How to Log into your Docker Container</h1>
+    <h1 class="mt-5 col-9">Basic Linux Commands and How to Log into Your Docker Container</h1>
+    <br>
+    <p>Before we dive into learning basic Linux Commands, it is important to know how to get into the Docker container to start.In order to login to a running docker container, first run <b>docker ps</b> in order to see all the running containers.</p>
+    <img src="images/command1-1.png" alt="docker ps" class="p-3">
+    <p>Then, run <b>docker exec -t [container_id] /bin/bash</b> in order to log into the container.</p>
+    <img src="images/command1-2.png" alt="container login" class="p-3">
+    <p>From here, you can create html files and edit in the vi text editor with Linux. Linux is an open-source operating system modelled on UNIX based on the Linux kernel, which was invented by Linus Torvalds. It is imperative to know basic linux commands in order to use the vi editor effectively. The following is a list of basic Linux commands that are commonly used.</p>
+    <br>
 </div>
 
-<!--div class="container">
-    <h1 class="mt-5">How the Internet Works</h1>
-</div-->
+<div class="container">
+    <h5>Basic Linux Commands</h5>
+    <div class="table-responsive-md">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code class="w3-codespan">ls</code></td>
+                <td>Lists all files and directories in the present working directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">ls</code></td>
+                <td>Lists all files and directories in the present working directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">ls-R</code></td>
+                <td>Lists files in sub-directories as well</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">ls-a</code></td>
+                <td>Lists hidden files as well</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">ls-al</code></td>
+                <td>Lists files and directories with detailed information like permissions,size, owner, etc.</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">cd or cd ~</code></td>
+                <td>Navigate to HOME directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">cd ..</code></td>
+                <td>Move one level up</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">cd</code></td>
+                <td>To change to a particular directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">cd /</code></td>
+                <td>Move to the root directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">cat filename</code></td>
+                <td>Displays the file content</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">sudo</code></td>
+                <td>Allows regular users to run programs with the security privileges of the superuser or root</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">rm filename</code></td>
+                <td>Deletes a file</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">clear</code></td>
+                <td>Clears the terminal</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">mkdir directoryname</code></td>
+                <td>Creates a new directory in the present working directory or a at the specified path</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">rmdir</code></td>
+                <td>Deletes a directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">mv</code></td>
+                <td>Renames a directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">rmdir</code></td>
+                <td>Deletes a directory</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">apt-get</code></td>
+                <td>Command used to install and update packages</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <h5>vi Editing Commands</h5>
+    <div class="table-responsive-md">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code class="w3-codespan">vi filename</code></td>
+                <td>To create a file or access an existing file and use vi</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">vi -r filename</code></td>
+                <td>To recover file that was being edited when system crashed</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">:wq</code></td>
+                <td>To save modified or new file and exit vi</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">:q!</code></td>
+                <td>To quit vi even though latest changes have not been saved</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">vi filename</code></td>
+                <td>To create a file or access an existing file and use vi</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">vi -r filename</code></td>
+                <td>To recover file that was being edited when system crashed</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">:wq</code></td>
+                <td>Press ESC first. Then use code to save modified or new file and exit vi</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">:q!</code></td>
+                <td>Press ESC first. Then use code to quit vi even though latest changes have not been saved</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">i</code></td>
+                <td>Insert at cursor (goes into insert mode)</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">a</code></td>
+                <td>Write after cursor (goes into insert mode)</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">A</code></td>
+                <td>Write at the end of line (goes into insert mode)</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">u</code></td>
+                <td>Undo last change</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">U</code></td>
+                <td>Undo all changes to the entire line</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">o</code></td>
+                <td>Open a new line (goes into insert mode)</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">dd</code></td>
+                <td>Delete line</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">D</code></td>
+                <td>Delete contents of line after the cursor</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">C</code></td>
+                <td>Delete contents of a line after the cursor and insert new text. Press ESC key to end insertion</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">dw</code></td>
+                <td>Delete word</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">cw</code></td>
+                <td>Change word</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">x</code></td>
+                <td>Delete character at the cursor</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">r</code></td>
+                <td>Replace character</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">s</code></td>
+                <td>Substitute one character under cursor continue to insert</td>
+            </tr>
+            <tr>
+                <td><code class="w3-codespan">~</code></td>
+                <td>Change case of individual character</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
