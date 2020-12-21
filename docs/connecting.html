@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Connecting Docker with PyCharm</title>
+    <style>
+
+        #section1 {
+            background-color: silver;
+        }
+
+        #section2 {
+            background-color: lavender;
+        }
+
+        #section3 {
+            background-color: mistyrose;
+        }
+    </style>
 </head>
 <body>
 
@@ -50,13 +64,45 @@
     </nav>
 </header>
 
+
 <div class="container">
     <h1 class="mt-5 col-9">Connecting Docker with PyCharm</h1>
+    <br>
+    <p>
+        In this tutorial, we will learn how to connect Docker with PyCharm version 2020.3. Assuming Docker, Python, and PyCharm have all been installed on your computer, you can continue with the tutorial.
+    </p>
 </div>
 
-<!--div class="container">
-    <h1 class="mt-5">How the Internet Works</h1>
-</div-->
+<div class="container mt-4 mb-4" id="section1">
+    <h5 class="mt-4 mb-4"><b>Step 1: Setup PyCharm Settings</b></h5>
+    <p>Go to <b><i>File</i></b> > <b><i>Settings</i></b> > <b><i>Build, Execution, Deployment</i></b> > <b><i>Docker</i></b>, you should see the following screen. In this instance, Docker was already set up, but if it isn't, click on the <b>+</b> sign in order to add Docker, and then the same screen will be shown as below.</p>
+    <img src="images/connecting1-1.png" alt="pycharm settings" class="p-3">
+    <p>If using Docker Windows Desktop, make sure that <b>TCP socket</b> is checked off and enter the URL <b>tcp://localhost:2375</b> and click <b>OK</b>.</p>
+    <br><br>
+</div>
+
+<div class="container mt-4 mb-4" id="section2">
+    <h5 class="mt-4 mb-4"><b>Step 2: Adding Run Configuration</b></h5>
+    <p>In the top left-hand corner, you can find a dropdown menu that says <b><i>main</i></b>, and you can click on <b><i>Edit Configurations</i></b>.</p>
+    <img src="images/connecting2-1.png" alt="edit configuration" class="p-3">
+    <p>Navigate to <b><i>Templates</i></b> and then <b><i>Docker</i></b>.</p>
+    <img src="images/connecting2-2.png" alt="templates" class="p-3">
+    <p>Then click on <b><i>Dockerfile</i></b>.Click the <b>+</b> sign.</p>
+    <img src="images/connecting2-3.png" alt="dockerfile plus" class="p-3">
+    <p>You should see the following screen below. You can add your Dockerfile in <i>Dockerfile</i>, and make sure that <b>Run built image</b> is checked off.</p>
+    <img src="images/connecting2-4.png" alt="dockerfile configured" class="p-3">
+    <br><br>
+</div>
+
+<div class="container" id="section3">
+    <h5 class="mt-4 mb-4"><b>Step 3: Running </b></h5>
+    <p>Go the the Navigation Bar and find <b><i>Run</i></b>. Then click on <b><i>Run [Dockerfile name]</i></b></p>
+    <img src="images/connecting3-1.png" alt="run dockerfile" class="p-3">
+    <p>Under <b><i>Services</i></b> at the bottom of the page, you should see the <b><i>Build Log</i></b> running. Once the build log has been successfully deployed, you can click on the play button like below and check the <b><i>Log</i></b> tab to see the final output!</p>
+    <img src="images/connecting3-2.png" alt="run dockerfile" class="p-3">
+    <br><br>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
