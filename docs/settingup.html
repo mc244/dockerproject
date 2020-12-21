@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Setting Up a Web Server with Docker</title>
+    <style>
+
+        #section1 {
+            background-color: lightpink;
+        }
+
+        #section2 {
+            background-color: gold;
+        }
+
+        #section3 {
+            background-color: lightskyblue;
+        }
+
+        #section4 {
+            background-color: lightpink;
+        }
+
+        #section5 {
+            background-color: gold;
+        }
+
+        #section6 {
+            background-color: lightskyblue;
+        }
+        .column {
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -52,12 +81,82 @@
 
 <div class="container">
     <h1 class="mt-5 col-9">Setting Up a Web Server with Docker</h1>
+    <br>
+    <p>
+        Docker is a container management service in which its purpose it to allow for developers to easily develop applications, ship them into containers which can be deployed anywhere. For this tutorial, we will learn how to build a web server on our local computer using Docker. Assuming that Docker has already been installed, we will use the Apache Web Server on Ubuntu.
+    </p>
 </div>
 
+<div class="container mt-4 mb-4" id="section1">
+    <h5 class="mt-4 mb-4"><b>Step 1: Pull Ubuntu Image</b></h5>
+    <p>After opening Docker, run <b>docker pull ubuntu</b>. This pulls the latest Ubuntu image from Dockerhub</p>
+    <img src="images/setup1-1.png" alt="pull image" class="p-3">
+    <p>By using <b>docker images</b>, you can check the existing Docker images on your computer</p>
+    <img src="images/setup1-2.png" alt="check image" class="p-3">
+    <br><br>
+</div>
 
-<!--div class="container">
-    <h1 class="mt-5">How the Internet Works</h1>
-</div-->
+<div class="container mt-4 mb-4" id="section2">
+    <h5 class="mt-4 mb-4"><b>Step 2: Committing Changes to Docker Image</b></h5>
+    <p>To run the Ubuntu image to start a Docker container, run <b>docker run -it ubuntu:latest /bin/bash</b></p>
+    <img src="images/setup2-1.png" alt="start image" class="p-3">
+    <p>After running the image, it is a good idea to make sure that all the packages pre-isntalled on the Ubuntu image are p to date. Run <b>apt-get update</b> as shown below.</p>
+    <img src="images/setup2-2.png" alt="update image" class="p-3">
+    <p>After it has been updated, we are now ready to install apache2 using <b>apt-get install apache2</b>.</p>
+    <img src="images/setup2-3.png" alt="install apache2" class="p-3">
+    <p>Then, the vim text editor can be installed using <b>apt-get install vim</b>.</p>
+    <img src="images/setup2-4.png" alt="install vim" class="p-3">
+    <p>After all the installations are complete, the Ubuntu container can be exited by using the command <b>exit</b>.</p>
+    <img src="images/setup2-5.png" alt="exit installation" class="p-3">
+    <br><br>
+</div>
+
+<div class="container" id="section3">
+    <h5 class="mt-4 mb-4"><b>Step 3: Committing Changes to Docker Image</b></h5>
+    <p>First, the container is checked by running <b>docker ps -a</b>.</p>
+    <img src="images/setup3-1.png" alt="check image for commit change" class="p-3">
+    <p>A new Docker image can be created by running <b>docker commit [container ID] [name of new Docker image]</b> as shown below. In this specific instance, <i>4d13b78bd597</i> is the container ID and the name of the new Docker image is <i>ubuntu-my_apache2</i>.</p>
+    <img src="images/setup3-2.png" alt="new docker image" class="p-3">
+    <br><br>
+</div>
+
+<div class="container" id="section4">
+    <h5 class="mt-4 mb-4"><b>Step 4: Sharing Data between Docker Container and Host</b></h5>
+    <p>Once a Docker container is stopped, data is not stored. Therefore, in order to have persistent data storage, Docker provides three different storage options, bind mounts, in-memory storage (tmpfs), and volumes. In this tutorial, we will use Docker volumes to store data.The advantage of using Docker volumes is that volumes are easier to back up and migrate. They are safer to share among containers.The following command should be used <b>docker run -it -p 127.0.0.1:80:80 -v [Host directory]:/var/www/html [Docker image name] /bin/bash</b>.</p>
+    <img src="images/setup4.png" alt="docker volume" class="p-3">
+    <br><br>
+</div>
+
+<div class="container" id="section5">
+    <h5 class="mt-4 mb-4"><b>Step 5: Using vi Editor to Create index.html </b></h5>
+    <p>A simple index.html can be created using the vi Editor. In order to acess the editor, you should check the working directory in the following pathway.</p>
+    <img src="images/setup5-1.png" alt="vi directory" class="p-3">
+    <p>Run <b>vi index.html</b>.</p>
+    <img src="images/setup5-2.png" alt="vi editor" class="p-3">
+    <p>You should observe the following to enter the vi Editor. In order to make changes in the editor, type <b><i>i</i></b> in order to see the word <b><i>Insert</i></b> at the bottom of the editor.</p>
+    <div class="row">
+        <div class="column">
+            <p><b>Before</b></p>
+            <img src="images/setup5-3.png" alt="vi before">
+        </div>
+        <div class="column">
+            <p><b>After</b></p>
+            <img src="images/setup5-4.png" alt="vi after">
+        </div>
+    </div>
+    <br>
+    <p>HTML code can now be entered. After you are done editting the index.html file, press <b><i>ESC</i></b> and then type <b><i>:wq</i></b> in order to quit the vi editor.</p>
+    <br><br>
+</div>
+
+<div class="container" id="section6">
+    <h5 class="mt-4 mb-4"><b>Step 6: Using Docker to Host Website</b></h5>
+    <p>To start the Apache Server on Ubuntu,run <b>service apache2 start</b>.</p>
+    <img src="images/setup6-1.png" alt="start docker" class="p-3">
+    <p>Using a browser on your host computer, you can access the localhost address by typing in <i>127.0.0.1</i> and you should see the product of the code added in index.html!</p>
+    <img src="images/setup6-2.png" alt="localhost address" class="p-3">
+    <br><br>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
